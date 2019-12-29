@@ -39,6 +39,10 @@
                        <label for="image" class="col-sm-3 control-label">画像</label>
                         <input type="file" id="image" name="image" class="form-control" value=""/>
                 </div>
+                <div class="col-sm-6">
+                       <label for="detail" class="col-sm-3 control-label">詳細</label>
+                        <input type="text" id="detail" name="detail" class="form-control" value=""/>
+                </div>
                 
             </div>
 
