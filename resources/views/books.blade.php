@@ -40,8 +40,12 @@
                         <input type="file" id="image" name="image" class="form-control" value=""/>
                 </div>
                 <div class="col-sm-6">
-                       <label for="detail" class="col-sm-3 control-label">詳細</label>
-                        <input type="text" id="detail" name="detail" class="form-control" value=""/>
+                       <label for="description" class="col-sm-3 control-label">詳細</label>
+                        <input type="text" id="description" name="description" class="form-control" value=""/>
+                </div>
+                <div class="col-sm-6">
+                       <label for="location" class="col-sm-3 control-label">場所</label>
+                        <input type="text" id="location" name="location" class="form-control" value=""/>
                 </div>
                 
             </div>
@@ -82,7 +86,13 @@
                                 <!-- 本タイトル -->
                                 <td class="table-text">
                                     <div>{{ $book->item_name }}</div>
-                                                           <img src="./storage/upload/{{$book->image}}" width="400" height="250" alt="">
+                                    <div>{{ $book->item_number }}名</div>
+                                    <div>{{ $book->item_amount }}円</div>
+                                    <div>{{ $book->published }}</div>
+                                    <div>{{ $book->description }}</div>
+                                    <div>{{ $book->location }}</div>
+                                    
+                                       <img src="./storage/upload/{{$book->image}}" width="400" height="250" alt="">
 
                                 </td>
                                 

@@ -12,8 +12,8 @@
 use App\Book;
 use Illuminate\Http\Request; 
 
-// Auth::routes();
-// Route::get('/home','HomeController@index')->name('home');
+Auth::routes();
+Route::get('/top','TopController@top')->name('top');
 
 /**
 * 本のダッシュボード表示 */

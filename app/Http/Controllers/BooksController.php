@@ -26,9 +26,12 @@ class BooksController extends Controller
         //バリデーション
     $validator = Validator::make($request->all(), [
             'item_name' => 'required|min:3|max:255',
-            'item_number' => 'required | min:1 | max:3',
-            'item_amount' => 'required | max:6',
+            'item_number' => 'required | min:1 | max:500',
+            'item_amount' => 'required | max:8',
              'published'   => 'required',
+             'description' => 'required|min:3|max:500',
+             'location' => 'required|min:3|max:255',
+             'image'   => 'required',
     ]);
     //バリデーション:エラー
     if ($validator->fails()) {
@@ -42,6 +45,9 @@ class BooksController extends Controller
     $books->item_number =  $request->item_number;
     $books->item_amount =  $request->item_amount;
     $books->published =    $request->published;
+    $books->description =    $request->description;
+    $books->location =    $request->location;
+    $books->image =    $request->image;
     
     
     $file = $request->file('image');
@@ -64,9 +70,13 @@ class BooksController extends Controller
         $validator = Validator::make($request->all(), [
             'id' => 'required',
             'item_name' => 'required|min:3|max:255',
-            'item_number' => 'required|min:1|max:3',
-            'item_amount' => 'required|max:6',
+            'item_number' => 'required|min:1|max:500',
+            'item_amount' => 'required|max:8',
             'published' => 'required',
+            'description' => 'required|min:3|max:500',
+             'location' => 'required|min:1|max:255',
+             'image'   => 'required',
+            
     ]);
     //バリデーション:エラー
         if ($validator->fails()) {
@@ -80,6 +90,9 @@ class BooksController extends Controller
     $books->item_number = $request->item_number;
     $books->item_amount = $request->item_amount;
     $books->published   = $request->published;
+    $books->description =    $request->description;
+    $books->location =    $request->location;
+    $books->image =    $request->image;
     $books->save();
     return redirect('/');
     }
