@@ -8,10 +8,10 @@ use Validator;
 use Auth;
 
 class BooksController extends Controller
-    {
+{
         // 本ダッシュボード表示
         public function index(){
-             $books = Book::orderBy('created_at', 'asc')->paginate(5);
+             $books = Book::orderBy('created_at', 'dsc')->paginate(5);
             return view('books', [
                 'books' => $books
     ]);
@@ -78,7 +78,7 @@ class BooksController extends Controller
              'image'   => 'required',
             
     ]);
-    //バリデーション:エラー
+    //バリテ���ーション:エラー
         if ($validator->fails()) {
             return redirect('/')
                 ->withInput()

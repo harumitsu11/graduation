@@ -13,7 +13,14 @@ use App\Book;
 use Illuminate\Http\Request; 
 
 Auth::routes();
-Route::get('/top','TopController@top')->name('top');
+Route::get('/top','TopController@top')->name('top'); // >name('top')はなくてもいい
+Route::get('/event/{event_id}/', 'EventController@showEvent');
+Route::POST('/event/apply/', 'EventController@join');
+// Route::get('/mypage/{event_id}/', 'MypageController@join');
+
+
+
+// Route::get('/event','TopController@event')->name('event');
 
 /**
 * 本のダッシュボード表示 */
