@@ -19,6 +19,15 @@ class EventController extends Controller
 // 登録
    
       public function join(Request $request){
+              if (Auth::check()){
+            // $eventData = Book::find($event_id);
+            return Redirect::to('/complete');
+            
+        }else{
+            session()->put("redirect_url", "");
+            return redirect('/login');
+        }
+    }
     //       $eventData = Book::find($event_id);
     // return view('mypage', compact("eventData"));
         //バリデーション
@@ -59,13 +68,6 @@ class EventController extends Controller
     // $books->join();   //「/」ルートにリダイレクト 
     // return redirect('/');
     
-        if (Auth::check()){
-            $eventData = Book::find($event_id);
-            
-        }else{
-            session()->put("redirect_url", "");
-            return redirect('/login');
-        }
-    }
+    
     
 }
