@@ -26,7 +26,7 @@
                                     <div>{{ $book->description }}</div>
                                     <div>{{ $book->location }}</div>
                                     
-                                       <img src="./storage/upload/{{$book->image}}" width="400" height="250" alt="">
+                                       <img src="../storage/upload/{{$book->image}}" width="400" height="250" alt="">
 
                                 </td>
                             </tr>
