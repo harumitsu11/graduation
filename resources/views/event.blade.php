@@ -19,7 +19,14 @@
 
    
         <div class="well well-sm">
-            <button type="submit" class="btn btn-primary">参加する</button>
+            
+            <form action="{{ url('event/apply') }}" method="POST">
+                {{ csrf_field() }}
+                <input type="hidden" name="item_name" value="{{$eventData->id}}">
+                <button type="submit" class="btn btn-primary">参加する</button>
+                
+            </form>
+            
             <a class="btn btn-link pull-right" href="{{ url('/') }}">
                 <i class="glyphicon glyphicon-backward"></i>  Back
             </a>

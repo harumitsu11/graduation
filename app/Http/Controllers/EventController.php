@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use App\Trip;
 use Validator;
 use Auth;
 use Session;
@@ -18,16 +19,30 @@ class EventController extends Controller
 
 // 登録
    
-      public function join(Request $request){
-              if (Auth::check()){
-            // $eventData = Book::find($event_id);
-            return Redirect::to('/complete');
+    public function join(Request $request){
+        
+        if (Auth::check()){
+            $trips = new Trip;
+            $trips->item_name =    $request->item_name;
+            $trips->name      =  Auth::id();
+            $trips->save();
+            return redirect('/complete');
+            
             
         }else{
             session()->put("redirect_url", "");
             return redirect('/login');
         }
+        
+
+
     }
+    public function complete(Request $request){
+        
+        return view('complete');
+    }
+    
+   
     //       $eventData = Book::find($event_id);
     // return view('mypage', compact("eventData"));
         //バリデーション

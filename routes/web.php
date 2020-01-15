@@ -16,7 +16,10 @@ Auth::routes();
 Route::get('/top','TopController@top')->name('top'); // >name('top')はなくてもいい
 Route::get('/event/{event_id}/', 'EventController@showEvent');
 Route::post('/event/apply/', 'EventController@join');
+Route::get('/complete', 'EventController@complete');
+// Route::get('/event/{event_id}/', 'TopController@showEvent');
 // Route::get('/mypage/{event_id}/', 'MypageController@join');
+
 
 
 

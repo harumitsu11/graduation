@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    
+    <title>トップページ</title>
+   
 </head>
 <body>
     <thead>
@@ -26,7 +28,12 @@
                                     <div>{{ $book->description }}</div>
                                     <div>{{ $book->location }}</div>
                                     
-                                       <img src="../storage/upload/{{$book->image}}" width="400" height="250" alt="">
+                                    <a href="{{ url('/event/'.$book->id) }}"> 
+                                        {{($book->id)}}
+                                        <img src="../storage/upload/{{$book->image}}" width="400" height="250" alt="">
+                        
+                                    </a>
+                                       
 
                                 </td>
                             </tr>
